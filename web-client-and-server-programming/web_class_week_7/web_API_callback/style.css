@@ -1,5 +1,17 @@
+/**
+ * Styles for the ISS Tracker Application
+ */
+
+/**
+ * Map container styling
+ *
+ * Sets specific dimensions for the map display area
+ * - height: Fixed height of 400 pixels
+ * - width: Fixed width of 500 pixels
+ * - border: Thin black border to visually define the map area
+ */
 #iss-map {
     height: 400px;
     width: 500px;
-    border: 1px black solid ;
+    border: 1px black solid;
 }

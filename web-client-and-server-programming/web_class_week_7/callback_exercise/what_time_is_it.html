@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets the character encoding to UTF-8 for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Sets the page title shown in the browser tab -->
     <title>Interval</title>
 </head>
 <body>
-    <h1> What time is it?</h1>
-    <p id="time"  > </p>
+<!-- Main heading for the page -->
+<h1>What time is it?</h1>
+<!-- Paragraph element with id "time" that will display the current time -->
+<!-- Note: Initially empty, will be populated by JavaScript -->
+<p id="time"></p>
 
 <script>
-
+    // COMMENTED OUT CODE:
+    // This code correctly selects the DOM element where the time will be displayed
     // let timeElement = document.querySelector("#time");
+    // Sets up a repeating timer using setInterval with traditional function syntax
     // setInterval(function(){
-    //     let date = new Date();
-    //     timeElement.innerHTML = date;
-    // }, 1000);
+    //     let date = new Date(); // Creates a new Date object with the current date/time
+    //     timeElement.innerHTML = date; // Updates the content of the selected element
+    // }, 1000); // Runs every 1000 milliseconds (1 second)
 
-    // Arrow version
-    setInterval( () => {
-        let date = new Date();
-        timeElement.innerHTML = date;
-    }, 1000);
+    // ACTIVE CODE - ERROR: Missing variable definition
+    // This active code has an error - timeElement is used but not defined
+    // The variable declaration is only in the commented section above
+    // The setInterval function uses ES6 arrow function syntax
+    setInterval(() => {
+        let date = new Date(); // Creates a new Date object with the current date/time
+        timeElement.innerHTML = date; // ERROR: Will cause "timeElement is not defined"
+    }, 1000); // Runs every 1000 milliseconds (1 second)
 
+    // CORRECTION: To fix this issue, the variable declaration should be uncommented
+    // or added before the setInterval call:
+    // let timeElement = document.querySelector("#time");
 </script>
 </body>
 </html>

@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Page title that appears in browser tab -->
     <title>Where's the ISS?</title>
-    <!-- async = load the script in parallel with the HTML
-         defer = wait until the HTLM has finished loading before running the script -->
 
+    <!-- Comments explaining script loading attributes -->
+    <!-- async = load the script in parallel with the HTML
+         defer = wait until the HTML has finished loading before running the script -->
+
+    <!-- Leaflet CSS - External map library stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+          crossorigin=""/>
 
+    <!-- Leaflet JavaScript - External map library -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+            crossorigin=""></script>
 
+    <!-- Custom stylesheet for this application -->
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Main JavaScript file with async and defer attributes to optimize loading -->
+    <!-- This ensures the HTML is fully loaded before executing the JS -->
     <script async defer src="fetch.js"></script>
 </head>
 
 <body>
+<!-- Main page heading -->
+<h1>Where is the ISS</h1>
 
-    <h1>Where is the ISS</h1>
-    <div>
-        <p id="time"> </p>
-        <p>ISS Latitude: <span id="iss-lat"></span></p>
-        <p>ISS Longitude: <span id="iss-long"></span></p>
-    </div>
-    <div id="iss-map"> </div>
-        <p> Icon iss by Viktor Korobkov from <a href="https://thenounproject.com/browse/icons/term/iss/" target="_blank" title="iss Icons">Noun Project</a> (CC BY 3.0)</p>
+<!-- Container for ISS location data -->
+<div>
+    <!-- Element to display when the data was last fetched -->
+    <p id="time"> </p>
+
+    <!-- Elements to display the ISS coordinates -->
+    <!-- The spans will be populated by JavaScript -->
+    <p>ISS Latitude: <span id="iss-lat"></span></p>
+    <p>ISS Longitude: <span id="iss-long"></span></p>
+</div>
+
+<!-- Container for the map - size defined in CSS -->
+<div id="iss-map"> </div>
+
+<!-- Attribution for the ISS icon used in the map -->
+<p>Icon iss by Viktor Korobkov from <a href="https://thenounproject.com/browse/icons/term/iss/" target="_blank" title="iss Icons">Noun Project</a> (CC BY 3.0)</p>
 </body>
 </html>

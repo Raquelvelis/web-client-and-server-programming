@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets the character encoding to UTF-8 for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Sets the page title that appears in the browser tab -->
     <title>Timeout</title>
 </head>
 <body>
-  <h1>Expect an alert in 3 seconds after page load</h1>
+<!-- Main heading that informs the user what to expect -->
+<h1>Expect an alert in 3 seconds after page load</h1>
 
 <script>
+    // setTimeout is a Web API function that executes code after a specified delay
+    // It takes two main arguments:
+    //   1. A callback function to execute when the timer expires
+    //   2. A time value in milliseconds that determines how long to wait
 
-    setTimeout( function() {
+    setTimeout(function() {
+        // This anonymous callback function will run after the specified delay
+        // When executed, it will display an alert dialog to the user
         alert('Hello! I waited 3 seconds to show this');
-    }, 3000); // function , milliseconds
+    }, 3000); // 3000 milliseconds = 3 seconds
+
+    // Important notes about setTimeout:
+    // - It's non-blocking, meaning the rest of the code continues to execute
+    // - The function is placed in the callback queue after the delay
+    // - The function executes only when the call stack is empty (event loop)
+    // - The timer is not guaranteed to be precise - it's a minimum wait time
 </script>
 </body>
 </html>

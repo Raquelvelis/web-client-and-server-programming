@@ -2,47 +2,63 @@
 <html>
 
 <head>
+    <!-- Page title that appears in the browser tab -->
     <title>Capital City Guessing Game</title>
+
+    <!-- Character encoding specification for proper text rendering -->
     <meta charset="utf-8">
 
+    <!-- Responsive design meta tag for proper scaling on different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS framework for styling (loaded from CDN) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
 
-    <!-- We're no longer using the external Levenshtein library -->
+    <!-- JavaScript files that power the game -->
+    <!-- countries.js contains the array of country data -->
     <script src="countries.js"></script>
-    <script async defer src="game.js"></script>
 
+    <!-- game.js contains the game logic, loaded asynchronously and deferred -->
+    <!-- async: download in parallel with HTML parsing -->
+    <!-- defer: execute after HTML parsing is complete -->
+    <script async defer src="game.js"></script>
 </head>
 
 <body>
+<!-- Main content container with margin and centering -->
 <div class="content m-4 center-block">
+    <!-- Main heading for the game -->
     <h1>Geography Quiz</h1>
 
+    <!-- Instruction text for the user -->
     <p>Test your knowledge of geography. What's the capital city of this country?</p>
 
-    <!-- Display the country name here -->
+    <!-- Display the randomly selected country name -->
+    <!-- This element's content will be set by JavaScript -->
     <h3 id="random-country-display">Country name placeholder</h3>
 
+    <!-- Input group for user answer and submit button -->
     <div class="input-group mb-3">
-
-        <!-- The user will enter their answer in this input -->
+        <!-- Text input field where user types their answer -->
         <input type="text" id="user-answer-entry" class="form-control" placeholder="answer" aria-label="answer" aria-description="submit-answer">
-        <div class="input-group-append">
 
-            <!-- Clicking this button submits the user's answer for the program to verify  -->
+        <!-- Button group for the submit button -->
+        <div class="input-group-append">
+            <!-- Submit button that triggers answer checking -->
             <button class="btn btn-outline-secondary" type="button" id="submit-user-answer">Check Answer</button>
         </div>
     </div>
 
-    <!-- After the user's guess is verified, display if the user is correct, or
-     not (plus the correct answer) here -->
+    <!-- Element to display feedback about the user's answer -->
+    <!-- Will show correct/incorrect messages and the correct answer if needed -->
     <h3 id="game-result">Replace with result</h3>
 
-    <!-- Score display -->
+    <!-- Element to display the user's current score -->
     <h4 id="score-display">Score: 0</h4>
 
+    <!-- The "Play Again" button will be inserted here by JavaScript -->
 </div>
 </body>
 
