@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Event Counter</title>
+</head>
+<body>
+
+<!--
+  Create a paragraph element with id 'mouse-me'
+  This element will respond to mouse events
+-->
+<p id='mouse-me'>Move your mouse here!</p>
+
+
+<script>
+  // Initialize counter variable to track how many times the mouse hovers over the element
+  let mouseCount = 0;
+
+  // Select the paragraph element using its ID
+  let message = document.querySelector('#mouse-me');
+
+  // Add an event listener for the 'mouseover' event
+  // This function runs every time the mouse enters the element
+  message.addEventListener('mouseover', function () {
+    // Increment the counter by 1 each time mouse enters the element
+    mouseCount = mouseCount + 1;
+
+    // Check if the mouse has entered more than once to use correct plural form
+    if (mouseCount > 1) {
+      // Update the element's text to show the count with plural 'times'
+      message.innerHTML = 'Your mouse is on this message ' + mouseCount + ' times';
+    } else {
+      // Update the element's text to show singular 'time' for first hover
+      message.innerHTML = 'Your mouse is off this message ' + mouseCount + ' time';
+    }
+  });
+
+  // Add an event listener for the 'mouseout' event
+  // This function runs every time the mouse leaves the element
+  message.addEventListener('mouseout', function () {
+    // Reset the element's text when the mouse leaves
+    // Note: This doesn't reset the counter, only changes the displayed message
+    message.innerHTML = 'Your mouse is NOT on this message';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* styles.css */
+
+:root {
+    --primary-color: #2c5530;
+    --secondary-color: #4a8b3d;
+    --accent-color: #f0f7f0;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-top: 30px;
+    font-size: 1.8em;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 139, 61, 0.2);
+}
+
+input:disabled {
+    background-color: var(--accent-color);
+    cursor: not-allowed;
+}
+
+input.error, select.error {
+    border-color: var(--error-color);
+    background-color: #fff8f8;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+.error + .error-message {
+    display: block;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+#order-summary {
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success-color);
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    button {
+        width: auto;
+        float: right;
+    }
+}
+
+/* Animation for success message */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#order-summary:not(:empty) {
+    animation: fadeIn 0.5s ease-out;
+}

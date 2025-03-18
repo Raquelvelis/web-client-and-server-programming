@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <title> Quiz Game</title>
+
+  <head> </head>
+<body>
+
+<! Write your HTML content  here-->
+<!-- This paragraph poses the quiz question to the user -->
+<p>What is the capital of Wisconsin?</p>
+<!-- Three buttons for answer choices, one with a unique ID and two with the same class -->
+<button class="wrong-answer">Bayfield</button>
+<button id="correct-answer">Madison</button>
+<button class="wrong-answer">Milwaukee</button>
+
+<!-- Empty paragraph that will display feedback after user selects an answer -->
+<p id="result"></p>
+
+<script>
+  // JavaScript section starts here
+
+  // Select the correct answer button using its ID
+  let correctAnswerButton = document.querySelector('#correct-answer')
+
+  // Select the result paragraph where feedback will be displayed
+  let result = document.querySelector('#result')
+
+  // Select all wrong answer buttons using their shared class
+  let wrongAnswerButtons = document.querySelectorAll('.wrong-answer')
+
+  // Add event listeners to each wrong answer button using a forEach loop
+  wrongAnswerButtons.forEach(
+          function(wrongAnswerButton)  {
+            // For each wrong answer button, add a click event listener
+            wrongAnswerButton.addEventListener('click', function() {
+              // When clicked, update the result paragraph with feedback
+              result.innerHTML = 'wrong answer, try again?'
+            })
+          }
+  )
+
+  // Add an event listener to the correct answer button
+  correctAnswerButton.addEventListener('click', function() {
+    // When clicked, update the result paragraph with positive feedback
+    result.innerHTML = 'correct answer!'
+    // Change the background color of the correct button to cyan for visual confirmation
+    correctAnswerButton.style.background = 'cyan'
+  })
+</script>
+
+</body>
+</html>
+
+

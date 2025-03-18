@@ -1,0 +1,16 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+.feedback-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-label {
+    font-weight: 500;
+}

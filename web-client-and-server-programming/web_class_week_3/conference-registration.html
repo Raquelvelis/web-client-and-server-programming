@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="conference-registration.css">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="registration-form">
+                <h2 class="text-center mb-4">Conference Registration</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" maxlength="70" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tshirt" class="form-label">T-shirt Size</label>
+                        <select class="form-select" id="tshirt" name="tshirt" required>
+                            <option value="">Select size</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Receive email updates?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="updates" id="updates-yes" required>
+                            <label class="form-check-label" for="updates-yes">Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="updates" id="updates-no">
+                            <label class="form-check-label" for="updates-no">No</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Choose sessions</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="morning" name="morning">
+                            <label class="form-check-label" for="morning">Morning Session</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="afternoon" name="afternoon">
+                            <label class="form-check-label" for="afternoon">Afternoon Session</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="special-requests" class="form-label">Special Requests</label>
+                        <textarea class="form-control" id="special-requests" name="special-requests" rows="7" cols="70"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

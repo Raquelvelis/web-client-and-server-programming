@@ -1,0 +1,28 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.registration-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}

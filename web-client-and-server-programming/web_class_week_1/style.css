@@ -1,0 +1,107 @@
+/* Style for the main page title */
+#page-title {
+    color: #ffffff;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+#page-title2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Style for the body */
+body {
+    background-color: #573466;  /* Light blue background */
+    color: #333;  /* Dark gray text */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style for favorite sections */
+.favorite-section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgb(155, 27, 19);
+}
+
+/* Style for section headers */
+.section-header {
+    color: #2980b9;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Style for favorite movie title */
+#favorite-movie-title {
+    font-style: italic;
+    color: #e74c3c;  /* Red color */
+}
+
+/* Style for favorite music name */
+#favorite-music-name {
+    font-weight: bold;
+    color: #9b59b6;  /* Purple color */
+}
+
+/* Style for most favorite food */
+#most-favorite-food {
+    background-color: #f1c40f;  /* Yellow highlight */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Style for favorite images */
+.favorite-image {
+    border-radius: 15px;  /* Rounded corners */
+    max-width: 100%;  /* Responsive sizing */
+    height: auto;
+    display: block;
+    margin: 15px auto;  /* Center the image */
+    transition: transform 0.3s ease;  /* Smooth transition for hover effect */
+    filter: brightness(1.1);  /* Slightly brighter images */
+}
+
+/* Hover effect for images */
+.favorite-image:hover {
+    transform: scale(1.05);  /* Slightly enlarge on hover */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px;
+    border: 1px solid #2980b9;
+}
+
+td {
+    color: #2c3e50;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+}
+
+/* Alternating row colors for better readability */
+tr:nth-child(even) {
+    background-color: #f5f6fa;
+}

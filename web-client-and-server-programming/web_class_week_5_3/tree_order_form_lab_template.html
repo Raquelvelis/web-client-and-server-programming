@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tree Order Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h1>Minnesota Tree Order Form</h1>
+
+<p>Enter information to order your tree. All fields are required.</p>
+
+<div class="form-container">
+  <h2>Order Information</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="homeowner-name">Homeowner Name</label>
+      <input id="homeowner-name" name="homeowner-name">
+      <div class="error-message">Please enter your name</div>
+    </div>
+
+    <div class="form-group">
+      <label for="homeowner-house-number">House Number</label>
+      <input id="homeowner-house-number" name="homeowner-house-number">
+      <div class="error-message">Please enter your house number</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="homeowner-street-name">Street Name</label>
+      <input id="homeowner-street-name" name="homeowner-street-name">
+      <div class="error-message">Please enter your street name</div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input id="city" name="city">
+      <div class="error-message">Please enter your city</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="state">State</label>
+      <input id="state" name="state" value="Minnesota" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="zipcode">Zip Code</label>
+      <input id="zipcode" name="zipcode">
+      <div class="error-message">Please enter a valid Minnesota zip code</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="tree-type">Tree Type</label>
+    <select id="tree-type">
+      <option disabled selected value="">Select a tree</option>
+      <option>Cedar</option>
+      <option>Maple</option>
+      <option>Oak</option>
+    </select>
+    <div class="error-message">Please select a tree type</div>
+  </div>
+
+  <button id="submit-order">Submit Order</button>
+</div>
+
+<h2>Order Summary</h2>
+<p id="order-summary"></p>
+
+
+<script>
+
+  let homeownerNameInput = document.querySelector('#homeowner-name')
+  let homeownerHouseNumberInput = document.querySelector('#homeowner-house-number')
+  let homeownerStreetNameInput = document.querySelector('#homeowner-street-name')
+  let treeTypeSelect = document.querySelector('#tree-type')
+
+  let cityInput = document.querySelector('#city')
+  let zipcodeInput = document.querySelector('#zipcode')
+
+  let submitButton = document.querySelector('#submit-order')
+
+  let orderSummaryParagraph = document.querySelector('#order-summary')
+
+  submitButton.addEventListener('click', function() {
+
+    let name = homeownerNameInput.value
+    let houseNumber = homeownerHouseNumberInput.value
+    let streetName = homeownerStreetNameInput.value
+    let treeType = treeTypeSelect.value
+
+// Reset any previous error styling
+    const formElements = [homeownerNameInput, homeownerHouseNumberInput,
+      homeownerStreetNameInput, cityInput, zipcodeInput, treeTypeSelect]
+    formElements.forEach(element => element.classList.remove('error'))
+
+    let errors = []
+
+    // Validate all fields are filled
+    if (!name) {
+      errors.push('Please enter homeowner name')
+      homeownerNameInput.classList.add('error')
+    }
+    if (!houseNumber) {
+      errors.push('Please enter house number')
+      homeownerHouseNumberInput.classList.add('error')
+    }
+    if (!streetName) {
+      errors.push('Please enter street name')
+      homeownerStreetNameInput.classList.add('error')
+    }
+    if (!city) {
+      errors.push('Please enter city')
+      cityInput.classList.add('error')
+    }
+    if (!zipcode) {
+      errors.push('Please enter zip code')
+      zipcodeInput.classList.add('error')
+    }
+    if (!treeType) {
+      errors.push('Please select a tree type')
+      treeTypeSelect.classList.add('error')
+    }
+
+    // Validate zip code format and range
+    if (zipcode) {
+      // First check if it's exactly 5 digits
+      if (!/^\d{5}$/.test(zipcode.value)) {
+        errors.push('Zip code must be exactly 5 digits')
+        zipcodeInput.classList.add('error')
+      } else {
+        // Then check if it's in the Minnesota range
+        let zipcodeNumber = parseInt(zipcode.value)
+        if (zipcodeNumber < 55001 || zipcodeNumber > 56763) {
+          errors.push('This is not a valid Minnesota zip code. Minnesota zip codes range from 55001 to 56763.')
+          zipcodeInput.classList.add('error')
+        }
+      }
+    }
+
+    // If there are errors, display them and stop processing
+    if (errors.length > 0) {
+      alert(errors.join('\n'))
+      orderSummaryParagraph.textContent = ''
+      return
+    }
+
+    // If no errors, display order summary
+    const orderSummary = `
+        Thank you for your tree order! Here's your order summary:
+
+        Name: ${name}
+        Address: ${houseNumber} ${streetName}
+        City: ${city.value}
+        State: Minnesota
+        Zip Code: ${zipcode.value}
+        Tree Type: ${treeType}
+
+        Your ${treeType} tree will be delivered to your address in Minnesota within 5-7 business days.
+    `
+
+    orderSummaryParagraph.innerHTML = orderSummary.split('\n').join('<br>')
+  })
+
+
+
+</script>
+
+</body>
+</html>

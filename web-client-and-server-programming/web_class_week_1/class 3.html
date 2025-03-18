@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback Form</title>
+</head>
+<body>
+
+</body>
+</html>
+<form id="feedbackForm">
+
+  <label for="studentName">Name:</label>
+  <input type="text" id="studentName" name="studentName">
+  <br><br>
+
+  <label for="studentEmail">Email:</label>
+  <input type="email" id="studentEmail" name="studentEmail">
+  <br><br>
+
+  <!-- Comments textarea -->
+  <label for="comments">Comments (required):</label>
+  <textarea id="comments" name="comments" required></textarea>
+  <div id="errorMessage" style="color: red; display: none;">
+    Please enter your comments
+  </div>
+  <br><br>
+
+  <!-- Radio buttons -->
+  <label>Are you a current student?</label><br>
+  <input type="radio" id="studentYes" name="currentStudent" value="yes" checked>
+  <label for="studentYes">Yes</label>
+
+  <input type="radio" id="studentNo" name="currentStudent" value="no">
+  <label for="studentNo">No</label>
+  <br><br>
+
+  <!-- Submit button -->
+  <button type="submit">Submit Feedback</button>
+
+</form>

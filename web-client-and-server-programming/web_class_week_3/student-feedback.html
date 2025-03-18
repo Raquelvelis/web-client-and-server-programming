@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="student-feedback.css">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="feedback-form">
+                <h2 class="text-center mb-4">Student Feedback Form</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="courseId" class="form-label">Course ID</label>
+                            <input type="text" class="form-control" id="courseId" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="instructor" class="form-label">Instructor</label>
+                            <input type="text" class="form-control" id="instructor" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Course Rating</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="excellent">
+                            <label class="form-check-label" for="excellent">Excellent</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="good">
+                            <label class="form-check-label" for="good">Good</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="fair">
+                            <label class="form-check-label" for="fair">Fair</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="poor">
+                            <label class="form-check-label" for="poor">Poor</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comments" class="form-label">Additional Comments</label>
+                        <textarea class="form-control" id="comments" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
