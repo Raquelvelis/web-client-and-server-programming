@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue Forms</title>
+    <!-- Load Vue.js from CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Basic table styling -->
+    <style>
+        th, td {
+            width: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Vue app container -->
+<div id="app">
+    <!-- Product data table -->
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+
+        <tr>
+            <!-- Display reactive data with {{ }} syntax -->
+            <td>{{ name }}</td>
+            <td>{{ unitPrice }}</td>
+            <!-- v-model binds input value to quantity variable (two-way binding) -->
+            <td><input type='number' v-model='quantity'></td>
+            <!-- Display calculated total (computed property) -->
+            <td>{{ total }}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    // Import required Vue functions
+    const { createApp, ref, computed } = Vue
+
+    // Create and configure Vue app
+    createApp({
+        setup() {
+            // === STATE ===
+            // Create reactive variables for product info
+            const name = ref('Hat')
+            const quantity = ref(1)
+            const unitPrice = ref(4.99)
+
+            // === COMPUTED ===
+            // Calculate total price automatically when quantity changes
+            // Computed values update whenever their dependencies change
+            const total = computed(function() {
+                const totalPrice = unitPrice.value * quantity.value
+                const formattedPrice = totalPrice.toFixed(2) // Format to 2 decimal places
+                return formattedPrice
+            })
+
+            // Make variables and computed values available to the template
+            return {
+                name,
+                quantity,
+                unitPrice,
+                total
+            }
+        }
+    }).mount('#app') // Connect Vue to the DOM element with id="app"
+</script>
+</body>
+</html>

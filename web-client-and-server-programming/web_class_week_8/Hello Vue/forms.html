@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue Forms</title>
+    <!-- Load Vue.js from CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<!-- Vue app container -->
+<div id="app">
+    <!-- Form input field -->
+    <label>Please enter your name: </label>
+    <!-- v-model creates two-way binding between input and name variable -->
+    <input v-model="name">
+
+    <!-- Conditional rendering with v-if/v-else -->
+    <!-- Show this paragraph if name has a value -->
+    <p v-if="name">Your name is {{name}}</p>
+    <!-- Show this paragraph if name is empty -->
+    <p v-else>Awaiting user input</p>
+
+    <!-- Button with click event handler -->
+    <button v-on:click="clearName">Clear Name</button>
+</div>
+
+<script>
+    // Import required Vue functions
+    const { createApp, ref } = Vue
+
+    // Create and configure Vue app
+    createApp({
+        setup() {
+            // === STATE ===
+            // Create reactive variable for name with empty initial value
+            const name = ref('')
+
+            // === FUNCTIONS ===
+            // Function to reset the name input
+            function clearName() {
+                name.value = ''
+            }
+
+            // Make variables and functions available to the template
+            return {
+                name,
+                clearName
+            }
+        }
+    }).mount('#app') // Connect Vue to the DOM element with id="app"
+</script>
+</body>
+</html>

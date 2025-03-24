@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue To Do List </title>
+    <!-- Load Vue.js from CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+<!-- Vue app container -->
+<div id="app">
+    <h1>Task List</h1>
+
+    <!-- Task input section -->
+    <h2>Enter new Task</h2>
+    <label>Enter your to-do Task </label>
+    <!-- v-model binds input to newTask variable -->
+    <input v-model='newTask'>
+    <br>
+    <!-- Button with click event to add the task -->
+    <button v-on:click="addTask">Add Task</button>
+
+    <!-- Task display section -->
+    <h2>Task List</h2>
+    <ul>
+        <!-- v-for creates a list item for each task in taskList array -->
+        <li v-for="task in taskList">
+            {{task}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Import required Vue functions
+    const {createApp, ref} = Vue
+
+    // Create and configure Vue app
+    createApp({
+        setup() {
+            // === STATE ===
+            // Array of tasks with initial values
+            const taskList = ref(['Water plants', 'Pay cellphone bills', 'Wash floor'])
+            // Empty string for new task input
+            const newTask = ref('')
+
+            // === FUNCTIONS ===
+            // Function to add a new task to the list
+            function addTask() {
+                if (newTask.value) {
+                    // Add new task to the array
+                    taskList.value.push(newTask.value)
+                    // Clear the input field
+                    newTask.value = ''
+                }
+            }
+
+            // Make variables and functions available to the template
+            return {
+                taskList,
+                newTask,
+                addTask
+            }
+        }
+    }).mount('#app') // Connect Vue to the DOM element with id="app"
+</script>
+</body>
+</html>
