@@ -1,0 +1,73 @@
+/* 
+ * Custom styles for the Body Mass Index Web Application Server
+ */
+
+body { 
+    background: #bae4c2;  /* Light green background from Student Feedback app */
+    font-family: 'Roboto Slab', serif;
+}
+
+.header {
+    font-family: 'Arial Black';
+}
+
+/* Main container styling - centered with a green theme */
+.app-container {
+    max-width: 600px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Title styling */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial Black';
+    text-align: center;
+}
+
+/* Form container with green theme */
+.bmi-form {
+    background-color: #bae4c2; /* Light green background */
+}
+
+/* Form heading styling */
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+
+}
+
+/* Spacing between form groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Result container styling */
+.result-container {
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* BMI result styling */
+.bmi-result {
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+/* BMI info styling */
+.bmi-info {
+    margin-top: 20px;
+}
+
+/* Error container styling */
+.error-container {
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}

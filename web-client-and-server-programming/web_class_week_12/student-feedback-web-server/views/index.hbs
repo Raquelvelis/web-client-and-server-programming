@@ -1,0 +1,10 @@
+
+{{!-- Main heading with dynamic title from the server --}}
+<h1>Welcome to the {{ title }}</h1>
+
+{{!-- Author information with dynamic author name from the server --}}
+<p>A web app by {{ author }}</p>
+
+{{!-- Link to the feedback form page using a relative URL --}}
+{{!-- When clicked, this will trigger the GET /feedback-form route --}}
+<p><a href="/feedback-form">Submit feedback here</a></p>

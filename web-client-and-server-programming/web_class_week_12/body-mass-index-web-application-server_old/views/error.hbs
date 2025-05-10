@@ -1,0 +1,23 @@
+
+
+<div class="app-container">
+  {{!-- Main heading for the error page --}}
+  <h1>Error</h1>
+
+  {{!-- Display the error message --}}
+  <div class="error-container">
+    <div class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+    
+    <p>Please ensure that:</p>
+    <ul>
+      <li>Height and weight values are provided</li>
+      <li>Height and weight values are greater than zero</li>
+      <li>Height and weight values are numeric</li>
+    </ul>
+  </div>
+
+  {{!-- Link back to the home page --}}
+  <a href="/" class="btn btn-primary">Try Again</a>
+</div>

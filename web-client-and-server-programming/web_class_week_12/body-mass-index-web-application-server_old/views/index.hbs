@@ -1,0 +1,46 @@
+
+<div class="app-container">
+  {{!-- Application title with dynamic title from the server --}}
+  <h1>{{ title }}</h1>
+
+  {{!-- Main form container with red border --}}
+  <div class="bmi-form">
+    {{!-- Form heading --}}
+    <h2>Enter your data</h2>
+
+    {{!-- Form element with GET method - data will be sent to the server
+         action="/calculate": the URL where form data will be submitted --}}
+    <form method="GET" action="/calculate">
+      {{!-- Height input group --}}
+      <div class="form-group">
+        <label class="form-label" for="height">Height in meters</label>
+        {{!-- Input for height with appropriate attributes --}}
+        <div class="input-container">
+          <input 
+            class="form-control" 
+            id="height" 
+            name="height"
+            required
+          >
+        </div>
+      </div>
+
+      {{!-- Weight input group --}}
+      <div class="form-group">
+        <label class="form-label" for="weight">Weight in kilograms</label>
+        {{!-- Input for weight with appropriate attributes --}}
+        <div class="input-container">
+          <input 
+            class="form-control" 
+            id="weight" 
+            name="weight"
+            required
+          >
+        </div>
+      </div>
+
+      {{!-- Submit button with Bootstrap styling --}}
+      <input class="btn btn-primary" type="submit" value="Calculate">
+    </form>
+  </div>
+</div>

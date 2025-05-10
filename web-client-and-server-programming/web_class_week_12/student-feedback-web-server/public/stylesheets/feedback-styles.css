@@ -1,0 +1,17 @@
+/* 
+ * Custom styles for the Student Feedback application
+ *
+ * This stylesheet defines:
+ * - The page background color (light green)
+ * - Base font for the application (Roboto Slab)
+ * - Special font for headers (Pacifico)
+ */
+
+body { 
+    background: #bae4c2;  
+    font-family: 'Roboto Slab', serif;
+}
+
+.header {
+    font-family: 'Pacifico', cursive;
+}

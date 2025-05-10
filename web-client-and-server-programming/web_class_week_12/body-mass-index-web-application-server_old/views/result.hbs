@@ -1,0 +1,33 @@
+
+<div class="app-container">
+  {{!-- Main heading for the result page --}}
+  <h1>Body Mass Index Result</h1>
+
+  {{!-- Display the calculated BMI value --}}
+  <div class="result-container">
+    <h2>Your BMI Calculation</h2>
+    
+    {{!-- Display the input values --}}
+    <p>Height: {{ height }} meters</p>
+    <p>Weight: {{ weight }} kilograms</p>
+    
+    {{!-- Display the calculated BMI value --}}
+    <div class="bmi-result">
+      <h3>Your BMI is: {{ bmi }}</h3>
+    </div>
+    
+    {{!-- BMI category information --}}
+    <div class="bmi-info">
+      <p>BMI Categories:</p>
+      <ul>
+        <li>Underweight: BMI less than 18.5</li>
+        <li>Normal weight: BMI 18.5 to 24.9</li>
+        <li>Overweight: BMI 25 to 29.9</li>
+        <li>Obesity: BMI 30 or greater</li>
+      </ul>
+    </div>
+  </div>
+
+  {{!-- Link back to the home page --}}
+  <a href="/" class="btn btn-primary">Calculate Another BMI</a>
+</div>

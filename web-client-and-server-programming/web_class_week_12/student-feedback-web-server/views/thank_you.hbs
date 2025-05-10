@@ -1,0 +1,17 @@
+
+{{!-- Main heading for the thank you page --}}
+<h1>Thank you!</h1>
+
+{{!-- Subheading explaining what follows --}}
+<h2>Thank you for your feedback. To confirm, this is the data you sent,</h2>
+
+{{!-- Display the submitted form data using Handlebars variables --}}
+{{!-- These variables (name, email, message, currentStudent) come from the 
+     object passed to res.render() in the /submit-feedback route --}}
+<h3>Name: {{ name }} </h3>
+<h3>email: {{ email }}</h3>
+<h3>Message: {{ message }}</h3>
+<h3>Current student: {{ currentStudent }}</h3>
+
+{{!-- Link back to the home page using the root URL (/) --}}
+<a href="/">Back to the home page</a>
