@@ -1,0 +1,19 @@
+{
+  "name": "student-sign-in",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raquel Velis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "sequelize": "^6.37.7",
+    "tedious": "^16.7.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
