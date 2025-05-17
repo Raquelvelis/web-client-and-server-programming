@@ -1,0 +1,19 @@
+{
+  "name": "would-you-rather-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raquel Velis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
+
+
