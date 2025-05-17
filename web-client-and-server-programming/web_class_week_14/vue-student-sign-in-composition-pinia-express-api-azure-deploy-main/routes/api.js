@@ -40,7 +40,7 @@ router.patch('/students/:id', function(req, res, next) {
     const updatedStudent = req.body 
     console.log(studentID, updatedStudent)
     // Update student in database
-    Student.update( updatedStudent, { where: { id: studentID} })
+    Student.update( updatedStudent, { where: { starID: studentID} })
         .then( (result) => {
             const rowsModified = result[0]
             // Check if student was found and updated
@@ -65,7 +65,7 @@ router.patch('/students/:id', function(req, res, next) {
 router.delete('/students/:id', function(req, res, next) {
     const studentID = req.params.id
     // Delete student from database
-    Student.destroy({where: { id: studentID}})
+    Student.destroy({where: { starID: studentID}})
         .then( (rowsDeleted) => {
             // Check if student was found and deleted
             if (rowsDeleted === 1) {
